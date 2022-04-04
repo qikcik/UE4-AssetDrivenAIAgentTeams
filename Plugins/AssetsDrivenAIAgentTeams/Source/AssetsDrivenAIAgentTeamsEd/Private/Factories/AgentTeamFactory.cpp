@@ -54,7 +54,7 @@ UClass* FAgentTeamAssetTypeActions::GetSupportedClass() const
 
 FColor FAgentTeamAssetTypeActions::GetTypeColor() const
 {
-	return FColor::Emerald;
+	return FColor::Purple;
 }
 
 #undef LOCTEXT_NAMESPACE

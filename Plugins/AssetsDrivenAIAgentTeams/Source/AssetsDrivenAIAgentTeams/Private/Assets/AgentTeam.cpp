@@ -3,7 +3,10 @@
 
 #include "Assets/AgentTeam.h"
 
-FText UAgentTeam::GetDisplayName()
+
+TEnumAsByte<ETeamAttitude::Type> UAgentTeam::GetAttitudeToward(UAgentTeam* InAgentTeam)
 {
-	return DisplayName;
+	if(AttitudeTowards.Contains(InAgentTeam))
+		return AttitudeTowards[InAgentTeam];
+	return DefaultAttitudeToStrangers;
 }

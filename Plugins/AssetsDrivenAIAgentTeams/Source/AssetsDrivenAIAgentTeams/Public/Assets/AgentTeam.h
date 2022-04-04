@@ -3,8 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GenericTeamAgentInterface.h"
 #include "UObject/Object.h"
-
 #include "AgentTeam.generated.h"
 
 UCLASS(BlueprintType,meta=(ToolTip="Represent team, that can be assigned to specific AI(Player) Controller"))
@@ -14,10 +14,12 @@ class ASSETSDRIVENAIAGENTTEAMS_API UAgentTeam : public UPrimaryDataAsset
 
 public:
 	UFUNCTION(BlueprintCallable,Category="AgentTeam")
-	FText GetDisplayName();
+	TEnumAsByte<ETeamAttitude::Type> GetAttitudeToward( UAgentTeam* InAgentTeam );
 
-	
 protected:
-	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category="AgentTeam")
-	FText DisplayName;
+	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category="AgentTeam",meta=(ToolTip="Atiltude toward agent team that isn't specified"))
+	TEnumAsByte<ETeamAttitude::Type> DefaultAttitudeToStrangers;
+
+	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category="AgentTeam",meta=(ToolTip="team attlitude [value] towards agent team [key]"))
+	TMap<TSoftObjectPtr<UAgentTeam>,TEnumAsByte<ETeamAttitude::Type>> AttitudeTowards;
 };

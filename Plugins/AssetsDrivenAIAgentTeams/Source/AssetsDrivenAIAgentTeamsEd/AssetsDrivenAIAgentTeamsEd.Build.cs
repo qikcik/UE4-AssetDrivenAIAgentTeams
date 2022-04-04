@@ -17,7 +17,7 @@ public class AssetsDrivenAIAgentTeamsEd : ModuleRules
 		
 		PrivateIncludePaths.AddRange(
 			new string[] {
-				// ... add other private include paths required here ...
+				System.IO.Path.GetFullPath(Target.RelativeEnginePath) + "Source/Editor/Blutility/Private"
 			}
 			);
 			
@@ -26,7 +26,20 @@ public class AssetsDrivenAIAgentTeamsEd : ModuleRules
 			new string[]
 			{
 				"Core",
-				"AssetsDrivenAIAgentTeams"
+				"AssetsDrivenAIAgentTeams",
+				"Engine",
+				"CoreUObject",
+                "Engine",
+                "Slate",
+                "SlateCore",
+                "ToolMenus",
+                "EditorStyle",
+                "Blutility",
+                "UMGEditor",
+                "UMG",
+                "PropertyEditor",
+                "EditorScriptingUtilities",
+                "UnrealEd",
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
@@ -35,12 +48,7 @@ public class AssetsDrivenAIAgentTeamsEd : ModuleRules
 		PrivateDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"CoreUObject",
-				"Engine",
-				"Slate",
-				"SlateCore",
-				"UnrealEd",
-				"AssetTools"
+
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
