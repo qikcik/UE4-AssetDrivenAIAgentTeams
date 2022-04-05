@@ -10,15 +10,15 @@
 #include "TeamedCharacter.generated.h"
 
 class UAgentTeam;
-/**
- * 
- */
-UCLASS()
+
+
+UCLASS(meta=(ToolTip="Based Character that provide AssetsDrivenaiAgentTeams implementation "))
 class ASSETSDRIVENAIAGENTTEAMS_API ATeamedCharacter : public ACharacter, public IGenericTeamAgentInterface, public ITeamAssignable
 {
 	GENERATED_BODY()
 	
 protected:
+	virtual void BeginPlay() override;
 	virtual bool AssignTeam_Implementation(UAgentTeam* InTeam) override;
 	virtual UAgentTeam* GetAssignedTeam_Implementation() override;
 

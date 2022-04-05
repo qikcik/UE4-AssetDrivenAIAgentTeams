@@ -3,7 +3,6 @@
 
 #include "Assets/AgentTeam.h"
 
-
 TEnumAsByte<ETeamAttitude::Type> UAgentTeam::GetAttitudeToward(const UAgentTeam* InAgentTeam)
 {
 	if(AttitudeTowards.Contains(InAgentTeam))

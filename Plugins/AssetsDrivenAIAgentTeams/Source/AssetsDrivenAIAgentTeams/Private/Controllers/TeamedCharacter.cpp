@@ -5,6 +5,12 @@
 
 #include "Assets/AgentTeam.h"
 
+void ATeamedCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+	ITeamAssignable::Execute_AssignTeam(this,Team);
+}
+
 bool ATeamedCharacter::AssignTeam_Implementation(UAgentTeam* InTeam)
 {
 	if(!ensureMsgf(InTeam,TEXT("In team cannot be nullptr")))
