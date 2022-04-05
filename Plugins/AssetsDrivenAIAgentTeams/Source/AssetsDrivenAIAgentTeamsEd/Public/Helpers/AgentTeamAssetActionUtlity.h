@@ -11,7 +11,7 @@
 class UEditorUtilityWidget;
 class UEditorUtilityWidgetBlueprint;
 
-UCLASS()
+UCLASS(meta=(ToolTip="Base action utility that allow to display Editor Utility widget "))
 class ASSETSDRIVENAIAGENTTEAMSED_API UAgentTeamAssetActionUtlity : public UAssetActionUtility
 {
 	GENERATED_BODY()

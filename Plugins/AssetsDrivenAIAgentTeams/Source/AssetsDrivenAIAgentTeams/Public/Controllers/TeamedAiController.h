@@ -8,9 +8,7 @@
 #include "UObject/Object.h"
 #include "TeamedAiController.generated.h"
 
-/**
- * 
- */
+
 UCLASS(BlueprintType,meta=(ToolTip="AiController with support for AssetsDrivenAiAgenTeams"))
 class ASSETSDRIVENAIAGENTTEAMS_API ATeamedAiController : public AAIController, public ITeamAssignable
 {

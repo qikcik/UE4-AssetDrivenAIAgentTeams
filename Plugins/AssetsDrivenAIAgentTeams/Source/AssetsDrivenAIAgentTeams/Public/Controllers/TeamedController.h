@@ -11,7 +11,7 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(BlueprintType,meta=(ToolTip="Controller with support for AssetsDrivenAiAgenTeams"))
 class ASSETSDRIVENAIAGENTTEAMS_API ATeamedController : public AController, public IGenericTeamAgentInterface, public ITeamAssignable
 {
 	GENERATED_BODY()

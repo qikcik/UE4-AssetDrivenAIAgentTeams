@@ -8,7 +8,7 @@
 
 class UAgentTeam;
 // This class does not need to be modified.
-UINTERFACE(BlueprintType, meta=(ToolTip="use to assign team , get assigned team"))
+UINTERFACE(BlueprintType, meta=(ToolTip="use to assign team, get assigned team"))
 class ASSETSDRIVENAIAGENTTEAMS_API UTeamAssignable : public UInterface
 {
 	GENERATED_BODY()
