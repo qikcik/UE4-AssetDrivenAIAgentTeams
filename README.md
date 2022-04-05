@@ -10,7 +10,7 @@ It was created to allow designer using only blueprint to define ai agent charact
 
 ## How to use them
 ### Adding Teams
-After enabling plugin inside project you will can create new AgentTeam from context menu in content browser
+After adding (copy /plugins/AssetsDrivenAIAgentTeams to your project) and enabling plugin inside your project you will can create new AgentTeam from context menu in content browser
 <br/>![](Pictures/3.png)<br/>
 
 ### Editing Team

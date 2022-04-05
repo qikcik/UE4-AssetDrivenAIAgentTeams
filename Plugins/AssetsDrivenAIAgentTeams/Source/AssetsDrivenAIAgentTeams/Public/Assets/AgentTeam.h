@@ -20,6 +20,7 @@ public:
 	UFUNCTION(BlueprintPure,Category="Extend Info",meta=(DeterminesOutputType="InClass"))
 	UAgentTeamExtendInfo* GetExtendInfo(TSubclassOf<UAgentTeamExtendInfo> InClass);
 
+	// templated version for GetExtendInfo, easier to use in c++
 	template <typename TClass>
 	UAgentTeamExtendInfo* TGetExtendInfo();
 
