@@ -41,4 +41,17 @@ first of all character need to inherit from **TeamedCharacter**
 Now you can specify character team via Team variable inside TeamedCharacter category.
 <br/>![](Pictures/2.png)<br/>
 
-**That's all!**
+
+## Extensing Example
+### Video
+[![Video on Youtube](https://img.youtube.com/vi/oMqZNxIG94Y/0.jpg)](https://www.youtube.com/watch?v=oMqZNxIG94Y)
+
+### Short Description
+To Extend Agent Team with your game specifc data. You can create new Class inherited from AgentTeamExtendInfo, both inside c++ and blueprint.
+<br/>
+You can specify it inside each AgentTeam, by adding to Extend Infos set.
+<br/><br/>
+- **If you duplicate inherited Extend Info of the same class, during validation you will get a warning.** at runtime it will returned first object in set, inherited from class.
+- **If you will try to access inherited Extend Info of class that aren`t specified inside agent Team it will be automatically created.**
+
+## That's all!

@@ -17,6 +17,11 @@ public:
 	UFUNCTION(BlueprintCallable,Category="AgentTeam")
 	TEnumAsByte<ETeamAttitude::Type> GetAttitudeToward(const UAgentTeam* InAgentTeam );
 
+	UFUNCTION(BlueprintPure,Category="Extend Info",meta=(DeterminesOutputType="InClass"))
+	UAgentTeamExtendInfo* GetExtendInfo(TSubclassOf<UAgentTeamExtendInfo> InClass);
+
+	template <typename TClass>
+	UAgentTeamExtendInfo* TGetExtendInfo();
 
 
 protected:
@@ -26,4 +31,17 @@ protected:
 	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category="AgentTeam",meta=(ToolTip="team attlitude [value] towards agent team [key]"))
 	TMap<TSoftObjectPtr<UAgentTeam>,TEnumAsByte<ETeamAttitude::Type>> AttitudeTowards;
 
+	UPROPERTY(EditDefaultsOnly,Instanced,Category="Extend Info")
+	TSet<UAgentTeamExtendInfo*> ExtendInfos;
+
+#if WITH_EDITOR
+	virtual EDataValidationResult IsDataValid(TArray<FText>& ValidationErrors) override;
+#endif	
 };
+
+template <typename TClass>
+UAgentTeamExtendInfo* UAgentTeam::TGetExtendInfo()
+{
+	static_assert(TIsDerivedFrom<TClass,UAgentTeamExtendInfo>::Value,"UAgentTeam::TGetExtendInfo | TClass must inherit from UAgentTeamExtendInfo");
+	return Cast<TClass>(GetExtendInfo(TClass::StaticClass()));
+}
