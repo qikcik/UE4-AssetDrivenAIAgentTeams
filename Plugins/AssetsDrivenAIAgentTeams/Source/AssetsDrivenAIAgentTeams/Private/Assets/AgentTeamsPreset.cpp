@@ -3,14 +3,23 @@
 
 #include "Assets/AgentTeamsPreset.h"
 
-uint8 UAgentTeamsPreset::GetIDFromTeam(UAgentTeam* InTeam) const
+FGenericTeamId UAgentTeamsPreset::GetIDFromTeam(UAgentTeam* InTeam) const
 {
-	return 0;
+	int i = 0;
+	for(auto It : Teams)
+	{
+		if(It == InTeam)
+			return FGenericTeamId(i);
+		i++;
+	}
+	return FGenericTeamId::NoTeam;
 }
 
-UAgentTeam* UAgentTeamsPreset::GetTeamFromID(uint8 InTeam) const
+UAgentTeam* UAgentTeamsPreset::GetTeamFromID(FGenericTeamId InId) const
 {
-	return nullptr;
+	if(InId < Teams.Num())
+		return Teams.Array()[InId];
+	return DefaultTeam;
 }
 
 UAgentTeam* UAgentTeamsPreset::GetDefaultTeam() const 
@@ -31,5 +40,12 @@ EDataValidationResult UAgentTeamsPreset::IsDataValid(TArray<FText>& ValidationEr
 		Return = EDataValidationResult::Invalid;
 		ValidationErrors.Add(FText::FromString(TEXT("UAgentTeamsPreset Cannot have more than 254 Teams")));
 	}
+	if(DefaultTeam == nullptr)
+	{
+		Return = EDataValidationResult::Invalid;
+		ValidationErrors.Add(FText::FromString(TEXT("UAgentTeamsPreset DefaultTeam cannot be nullptr")));
+	}
+
+	
 	return Return;
 }

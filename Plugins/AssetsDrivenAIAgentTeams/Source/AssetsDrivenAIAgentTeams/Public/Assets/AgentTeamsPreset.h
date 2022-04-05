@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GenericTeamAgentInterface.h"
 #include "UObject/Object.h"
 #include "AgentTeamsPreset.generated.h"
 
@@ -14,10 +15,10 @@ class ASSETSDRIVENAIAGENTTEAMS_API UAgentTeamsPreset : public UPrimaryDataAsset
 public:
 
 	UFUNCTION(BlueprintPure,Category="AgentTeamsPreset")
-	uint8 GetIDFromTeam(UAgentTeam* InTeam) const;
+	FGenericTeamId GetIDFromTeam(UAgentTeam* InTeam) const;
 
 	UFUNCTION(BlueprintPure,Category="AgentTeamsPreset")
-	UAgentTeam* GetTeamFromID(uint8 InTeam) const;
+	UAgentTeam* GetTeamFromID(FGenericTeamId InId) const;
 	
 	UFUNCTION(BlueprintPure,Category="AgentTeamsPreset")
 	UAgentTeam* GetDefaultTeam() const;
