@@ -20,10 +20,10 @@ class ASSETSDRIVENAIAGENTTEAMS_API ITeamAssignable
 	GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintNativeEvent)
+	UFUNCTION(BlueprintNativeEvent,BlueprintCallable)
 	bool AssignTeam(UAgentTeam* InTeam);
 	
-	UFUNCTION(BlueprintNativeEvent)
+	UFUNCTION(BlueprintNativeEvent,BlueprintCallable)
 	UAgentTeam* GetAssignedTeam();
 
 protected:
