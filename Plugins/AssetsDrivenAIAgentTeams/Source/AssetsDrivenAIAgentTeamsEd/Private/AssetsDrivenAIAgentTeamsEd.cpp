@@ -21,7 +21,6 @@ void FAssetsDrivenAIAgentTeamsEdModule::StartupModule()
 	};
 
 	RegisterAssetTypeAction(MakeShareable(new FAgentTeamAssetTypeActions));
-	RegisterAssetTypeAction(MakeShareable(new FAgentTeamsPresetAssetTypeActions));
 }
 
 void FAssetsDrivenAIAgentTeamsEdModule::ShutdownModule()
