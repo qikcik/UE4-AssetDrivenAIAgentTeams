@@ -1,10 +1,11 @@
 # AssetDrivenAIAgentTeams
 License: CC BY-NC <br/>
-Author: Dominik Rudnik (Qikcik)
+Author: Dominik Rudnik (Qikcik) <br/>
+Link to build: https://drive.google.com/file/d/1lT5bJwDOrXxA6Ag8qePKrw2Sg_CcWjjc/view?usp=sharing
 
 ## Video Demo
-[![Video on Youtube](https://img.youtube.com/vi/VAKQ07_wojU/0.jpg)](https://www.youtube.com/watch?v=VAKQ07_wojU)
-
+[![Video on Youtube](https://img.youtube.com/vi/VAKQ07_wojU/0.jpg)](https://www.youtube.com/watch?v=VAKQ07_wojU) <br/>
+https://www.youtube.com/watch?v=VAKQ07_wojU
 ## Purpose of this plugin
 It was created to allow designer using only blueprint to define ai agent character teams, and relations between them.
 
@@ -44,8 +45,8 @@ Now you can specify character team via Team variable inside TeamedCharacter cate
 
 ## Extensing Example
 ### Video
-[![Video on Youtube](https://img.youtube.com/vi/oMqZNxIG94Y/0.jpg)](https://www.youtube.com/watch?v=oMqZNxIG94Y)
-
+[![Video on Youtube](https://img.youtube.com/vi/oMqZNxIG94Y/0.jpg)](https://www.youtube.com/watch?v=oMqZNxIG94Y)<br/>
+https://www.youtube.com/watch?v=oMqZNxIG94Y
 ### Short Description
 To Extend Agent Team with your game specifc data. You can create new Class inherited from AgentTeamExtendInfo, both inside c++ and blueprint.
 <br/>
