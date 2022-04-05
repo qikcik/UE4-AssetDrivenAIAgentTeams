@@ -1,6 +1,7 @@
 # AssetDrivenAIAgentTeams
 License: CC BY-NC <br/>
-Author: Dominik Rudnik (Qikcik)
+Author: Dominik Rudnik (Qikcik) <br/>
+Link to build: https://drive.google.com/file/d/1lT5bJwDOrXxA6Ag8qePKrw2Sg_CcWjjc/view?usp=sharing
 
 ## Video Demo
 [![Video on Youtube](https://img.youtube.com/vi/VAKQ07_wojU/0.jpg)](https://www.youtube.com/watch?v=VAKQ07_wojU)
