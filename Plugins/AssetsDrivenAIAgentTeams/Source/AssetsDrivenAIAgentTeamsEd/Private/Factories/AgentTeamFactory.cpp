@@ -109,7 +109,7 @@ UClass* FAgentTeamsPresetAssetTypeActions::GetSupportedClass() const
 
 FColor FAgentTeamsPresetAssetTypeActions::GetTypeColor() const
 {
-	return FColor::Turquoise;
+	return FColor::Red;
 }
 
 #undef LOCTEXT_NAMESPACE

@@ -4,7 +4,7 @@
 #include "Helpers/AssetDrivenAiAgentTeamsHelperBlueprintFunctionLibrary.h"
 
 #include "Assets/AgentTeamsPreset.h"
-#include "Config/AssetsDrivenAIAgentTeamsConfig.h"
+#include "Settings/AssetsDrivenAIAgentTeamsSettings.h"
 #include "GameFramework/GameStateBase.h"
 #include "Helpers/GameStateTeamsPresetOverridable.h"
 
@@ -12,7 +12,7 @@
 FGenericTeamId UAssetDrivenAiAgentTeamsHelperBlueprintFunctionLibrary::GetIDFromTeam(UAgentTeam* InTeam, UObject* InWorldContext)
 {
 	UAgentTeamsPreset* Preset = GetActualPreset(InWorldContext);
-	if(!ensureMsgf(Preset,TEXT("Ai Agent Teams Present is undefined in config and in actual gamestate"))) return FGenericTeamId::NoTeam;
+	if(!ensureMsgf(Preset,TEXT("Ai Agent Teams Present is undefined in settings and in actual gamestate"))) return FGenericTeamId::NoTeam;
 	
 	return Preset->GetIDFromTeam(InTeam);
 }
@@ -20,7 +20,7 @@ FGenericTeamId UAssetDrivenAiAgentTeamsHelperBlueprintFunctionLibrary::GetIDFrom
 UAgentTeam* UAssetDrivenAiAgentTeamsHelperBlueprintFunctionLibrary::GetTeamFromID(FGenericTeamId InId, UObject* InWorldContext)
 {
 	UAgentTeamsPreset* Preset = GetActualPreset(InWorldContext);
-	if(!ensureMsgf(Preset,TEXT("Ai Agent Teams Present is undefined in config and in actual gamestate"))) return nullptr;
+	if(!ensureMsgf(Preset,TEXT("Ai Agent Teams Present is undefined in settings and in actual gamestate"))) return nullptr;
 
 	return Preset->GetTeamFromID(InId);
 }
@@ -35,7 +35,7 @@ UAgentTeamsPreset* UAssetDrivenAiAgentTeamsHelperBlueprintFunctionLibrary::GetAc
 				Preset = IGameStateTeamsPresetOverridable::Execute_GetOverrideTeamsPreset(GameState);
 	
 	if(!Preset)
-		Preset = GetMutableDefault<UAssetsDrivenAIAgentTeamsConfig>()->DefaultPreset.Get();
+		Preset = GetMutableDefault<UAssetsDrivenAIAgentTeamsSettings>()->DefaultPreset.Get();
 
 	return Preset;
 }

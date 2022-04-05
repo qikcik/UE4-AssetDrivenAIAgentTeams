@@ -40,6 +40,7 @@ public class AssetsDrivenAIAgentTeamsEd : ModuleRules
                 "PropertyEditor",
                 "EditorScriptingUtilities",
                 "UnrealEd",
+                "DeveloperSettings"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);

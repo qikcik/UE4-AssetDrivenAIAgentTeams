@@ -34,6 +34,6 @@ protected:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,meta=(ToolTip="used when not found in teams array"))
 	UAgentTeam* DefaultTeam;
 	
-	UPROPERTY(EditAnywhere,BlueprintReadOnly,EditFixedSize=254)
+	UPROPERTY(EditAnywhere,BlueprintReadOnly)
 	TSet<UAgentTeam*> Teams;
 };
