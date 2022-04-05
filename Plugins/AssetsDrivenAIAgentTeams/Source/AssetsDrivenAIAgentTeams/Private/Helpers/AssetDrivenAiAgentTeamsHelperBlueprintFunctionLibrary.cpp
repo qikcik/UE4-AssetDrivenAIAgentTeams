@@ -6,13 +6,13 @@
 #include "Assets/AgentTeamsPreset.h"
 #include "Settings/AssetsDrivenAIAgentTeamsSettings.h"
 #include "GameFramework/GameStateBase.h"
-#include "Helpers/GameStateTeamsPresetOverridable.h"
+#include "Interfaces/GameStateTeamsPresetOverridable.h"
 
 
 FGenericTeamId UAssetDrivenAiAgentTeamsHelperBlueprintFunctionLibrary::GetIDFromTeam(UAgentTeam* InTeam, UObject* InWorldContext)
 {
 	UAgentTeamsPreset* Preset = GetActualPreset(InWorldContext);
-	if(!ensureMsgf(Preset,TEXT("Ai Agent Teams Present is undefined in settings and in actual gamestate"))) return FGenericTeamId::NoTeam;
+	if(!ensureMsgf(Preset,TEXT("Ai fallback Agent Teams Present is undefined in settings and in actual gamestate"))) return FGenericTeamId::NoTeam;
 	
 	return Preset->GetIDFromTeam(InTeam);
 }
@@ -20,7 +20,7 @@ FGenericTeamId UAssetDrivenAiAgentTeamsHelperBlueprintFunctionLibrary::GetIDFrom
 UAgentTeam* UAssetDrivenAiAgentTeamsHelperBlueprintFunctionLibrary::GetTeamFromID(FGenericTeamId InId, UObject* InWorldContext)
 {
 	UAgentTeamsPreset* Preset = GetActualPreset(InWorldContext);
-	if(!ensureMsgf(Preset,TEXT("Ai Agent Teams Present is undefined in settings and in actual gamestate"))) return nullptr;
+	if(!ensureMsgf(Preset,TEXT("Ai fallback Agent Teams Present is undefined in settings and in actual gamestate"))) return nullptr;
 
 	return Preset->GetTeamFromID(InId);
 }

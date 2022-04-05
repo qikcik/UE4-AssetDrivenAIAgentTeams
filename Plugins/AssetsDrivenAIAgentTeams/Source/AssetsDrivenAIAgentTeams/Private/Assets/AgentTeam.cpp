@@ -4,7 +4,7 @@
 #include "Assets/AgentTeam.h"
 
 
-TEnumAsByte<ETeamAttitude::Type> UAgentTeam::GetAttitudeToward(UAgentTeam* InAgentTeam)
+TEnumAsByte<ETeamAttitude::Type> UAgentTeam::GetAttitudeToward(const UAgentTeam* InAgentTeam)
 {
 	if(AttitudeTowards.Contains(InAgentTeam))
 		return AttitudeTowards[InAgentTeam];

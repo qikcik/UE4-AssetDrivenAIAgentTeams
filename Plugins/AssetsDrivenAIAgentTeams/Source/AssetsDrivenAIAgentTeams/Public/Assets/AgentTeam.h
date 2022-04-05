@@ -14,11 +14,11 @@ class ASSETSDRIVENAIAGENTTEAMS_API UAgentTeam : public UPrimaryDataAsset
 
 public:
 	UFUNCTION(BlueprintCallable,Category="AgentTeam")
-	TEnumAsByte<ETeamAttitude::Type> GetAttitudeToward( UAgentTeam* InAgentTeam );
+	TEnumAsByte<ETeamAttitude::Type> GetAttitudeToward(const UAgentTeam* InAgentTeam );
 
 protected:
 	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category="AgentTeam",meta=(ToolTip="Atiltude toward agent team that isn't specified"))
-	TEnumAsByte<ETeamAttitude::Type> DefaultAttitudeToStrangers;
+	TEnumAsByte<ETeamAttitude::Type> DefaultAttitudeToStrangers {ETeamAttitude::Type::Neutral};
 
 	UPROPERTY(EditDefaultsOnly,BlueprintReadOnly,Category="AgentTeam",meta=(ToolTip="team attlitude [value] towards agent team [key]"))
 	TMap<TSoftObjectPtr<UAgentTeam>,TEnumAsByte<ETeamAttitude::Type>> AttitudeTowards;
