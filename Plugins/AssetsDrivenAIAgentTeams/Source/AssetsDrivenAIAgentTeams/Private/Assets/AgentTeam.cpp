@@ -26,6 +26,7 @@ UAgentTeamExtendInfo* UAgentTeam::GetExtendInfo(TSubclassOf<UAgentTeamExtendInfo
 	return FirstRequested;
 }
 
+#if WITH_EDITOR
 EDataValidationResult UAgentTeam::IsDataValid(TArray<FText>& ValidationErrors)
 {
 	auto Return = Super::IsDataValid(ValidationErrors);
@@ -46,3 +47,4 @@ EDataValidationResult UAgentTeam::IsDataValid(TArray<FText>& ValidationErrors)
 	return Return;
 	
 }
+#endif
